@@ -1,0 +1,10 @@
+<h1>SCORE</h1>
+<%# <% url = "https://wagon-dictionary.herokuapp.com/#{@score}" %>
+<%# <%= dictionnary = URI.open(url).read %>
+<%# <% check_dictionnary = JSON.parse(dictionnary) %>
+<%= guess = @letters.chars.all? { |letter| @word.count(letter) <= @letters.count(letter) } %>
+<% if @letters.include?(@word) %>
+<%= "Good" %>
+<% else %>
+<%= "Sorry but #{@word} can't be built out of #{@letters}" %>
+<% end %>
